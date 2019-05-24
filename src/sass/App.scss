@@ -1,0 +1,196 @@
+@import "./variables";
+@import "./details";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  max-width: 1440px;
+}
+
+// Main nav
+
+nav {
+  display: flex;
+  padding: 30px 80px;
+  justify-content: space-between;
+  border-bottom: #f4f4f4 solid 0.1px;
+  box-shadow: 10px 6px 53px -35px rgba(0, 0, 0, 0.75);
+  height: 115px;
+  align-items: center;
+ 
+  #dark {
+    cursor: pointer;
+    font-weight: 300;
+    font-size: 18px;
+    height: 50px;
+    width: 150px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 20px i {
+      font-size: 14px;
+    }
+  }
+}
+
+.content-container {
+  padding: 0 80px;
+  padding-top: 50px;
+  background: $lightGrey;
+  min-height: 100vh;
+  .filters {
+    display: flex;
+    justify-content: space-between;
+    .search {
+      -webkit-box-shadow: 10px 10px 17px -22px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 10px 10px 17px -22px rgba(0, 0, 0, 0.75);
+      box-shadow: 10px 10px 17px -22px rgba(0, 0, 0, 0.75);
+      border-radius: 10px;
+      width: 485px;
+      padding: 25px;
+      font-size: 1rem;
+      border: none;
+      margin-bottom: 20px;
+      font-weight: 100;
+      &:focus {
+        outline: none;
+      }
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      height: 55px;
+      width: 200px;
+      font-size: 14px;
+      .dropbtn {
+        padding: 20px;
+        padding-left: 25px;
+        background: $white;
+        display: flex;
+        justify-content: space-between;
+        i {
+          margin-top: 3px;
+          font-size: 10px;
+        }
+      }
+
+      .dropdown-content {
+        width: 100%;
+        display: none;
+        position: absolute;
+        min-width: 160px;
+        background: $white;
+        z-index: 1;
+        .fit {
+          color: black;
+          padding: 5px;
+          padding-left: 25px;
+          text-decoration: none;
+          display: block;
+          cursor: pointer;
+          transition: all 0.4s;
+          &:hover {
+            background: $darkGrey;
+          }
+        }
+      }
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  }
+}
+
+.card {
+  margin-top: 50px;
+  height: 335px;
+  width: 266px;
+  background: $white;
+  -webkit-box-shadow: 10px 10px 17px -12px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 17px -12px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 17px -12px rgba(0, 0, 0, 0.75);
+  border-radius: 10px;
+  .card-image {
+    height: 45%;
+
+    img {
+      height: 100%;
+      width: 100%;
+      cursor: pointer;
+    }
+  }
+  .details {
+    height: 55%;
+    margin-left: 20px;
+    margin-bottom: 40px;
+
+    h3 {
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+
+    span {
+      font-weight: 600;
+    }
+  }
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 266px);
+  grid-column-gap: 75px;
+  grid-row-gap: 70px;
+}
+
+// Dark Mode ===============
+.dMode {
+  color: $white;
+  nav {
+    background: $darkBlue;
+    color: $white;
+  }
+
+  .content-container {
+    background: $veryDarkBlue;
+
+   
+    .search {
+      background: $darkBlue;
+
+      &::placeholder,
+      &:focus {
+        color: $white;
+      }
+    }
+    .card-container {
+      .card {
+        background: $darkBlue;
+      }
+    }
+
+    .dropdown {
+      .dropbtn {
+        background: $darkBlue;
+        color: $white;
+      }
+
+      .dropdown-content {
+        background: $darkBlue;
+        .fit {
+          color: $white;
+        }
+      }
+    }
+
+    #details{
+      .back-btn{
+        background: $darkBlue;
+      }
+    }
+  }
+}
