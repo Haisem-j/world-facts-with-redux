@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 import Navbar from "./Navbar";
 import Content from "./Content";
-import "../sass/App.scss";
+import "../sass/main.scss";
 class App extends Component {
   render() {
     return (
