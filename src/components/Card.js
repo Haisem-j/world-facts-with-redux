@@ -13,7 +13,7 @@ export default class Card extends Component {
       return (
         <div className="card" key={item.name} >
           <div className="card-image">
-            <img src={item.flag} onClick={this.props.detailChecker} id={item.name}/>
+            <img src={item.flag} alt={item.name} onClick={this.props.detailChecker} id={item.name}/>
           </div>
           <div className="details">
             <h3>{item.name}</h3>

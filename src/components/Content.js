@@ -25,8 +25,10 @@ class Content extends Component {
   detailChecker(event) {
     if (this.props.details !== true) {
       let detailCountry = this.props.filteredData.filter(item => {
-        if (event.target.id == item.name) {
+        if (event.target.id === item.name) {
           return item;
+        }else{
+          return '';
         }
       });
       let country = {
@@ -69,8 +71,10 @@ class Content extends Component {
     if (this.props.filter !== "All") {
       let ff = this.props.filter;
       newData = newData.filter(item => {
-        if (ff == item.region) {
+        if (ff === item.region) {
           return true;
+        }else{
+          return '';
         }
       });
     }
@@ -81,6 +85,8 @@ class Content extends Component {
         let checker = name.match(this.state.name);
         if (checker !== null) {
           return true;
+        }else{
+          return '';
         }
       });
     }

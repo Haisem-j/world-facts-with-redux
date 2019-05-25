@@ -7,7 +7,7 @@ import "../sass/main.scss";
 class App extends Component {
   render() {
     return (
-      <div className={this.props.dark == true ? "dMode" : ""}>
+      <div className={this.props.dark === true ? "dMode" : ""}>
         <Navbar />
         <Content />
       </div>

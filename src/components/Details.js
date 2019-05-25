@@ -22,7 +22,7 @@ class Details extends Component {
     return (
       <div className="details">
         <div className="flag-img">
-          <img src={a.flag} />
+          <img src={a.flag} alt={a.name}/>
         </div>
         <div className="more-details">
           <h1>{a.name}</h1>
